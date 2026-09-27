@@ -19,38 +19,24 @@ if crouched {
 	_ry = 13
 }
 
-// Speed trail.
+var _sx = (_rx * 2) / 64
+var _sy = (_ry * 2) / 64
+
+// Trail now uses the real ping-pong sprite.
 if _spd > 6 or state == states.grab or state == states.run {
 	for (var _t = 3; _t >= 1; _t--) {
 		draw_set_alpha(0.05 * (4 - _t))
-		draw_set_color(make_color_rgb(238, 247, 250))
-		draw_ellipse(
-			x - hsp * _t * 1.35 - _rx,
-			y - vsp * _t * 0.45 - _ry,
-			x - hsp * _t * 1.35 + _rx,
-			y - vsp * _t * 0.45 + _ry,
-			false
+		draw_sprite_ext(
+			spr_pingpong_ball, 0,
+			x - hsp * _t * 1.35,
+			y - vsp * _t * 0.45,
+			_sx, _sy, pingpong_spin, c_white, 1
 		)
 	}
 }
 
-// Shadow.
-draw_set_alpha(0.20)
-draw_set_color(c_black)
-draw_ellipse(x - _rx + 3, y + _ry - 2, x + _rx + 7, y + _ry + 7, false)
-
 draw_set_alpha(invuln and (floor(invulm_timer / 4) mod 2 == 0) ? 0.35 : 1)
-draw_set_color(make_color_rgb(246, 244, 233))
-draw_ellipse(x - _rx, y - _ry, x + _rx, y + _ry, false)
-draw_set_color(make_color_rgb(158, 164, 168))
-draw_ellipse(x - _rx, y - _ry, x + _rx, y + _ry, true)
-
-// Highlight and tiny orange maker mark.
-draw_set_color(c_white)
-draw_ellipse(x - _rx * 0.55, y - _ry * 0.60, x - _rx * 0.15, y - _ry * 0.20, false)
-draw_set_color(make_color_rgb(225, 92, 45))
-draw_circle(x + _rx * 0.27, y + _ry * 0.18, 2.5, false)
-
+draw_sprite_ext(spr_pingpong_ball, 0, x, y, _sx, _sy, pingpong_spin, c_white, 1)
 draw_set_alpha(1)
 draw_set_color(c_white)
 

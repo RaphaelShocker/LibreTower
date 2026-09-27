@@ -1,5 +1,10 @@
 {
   "resources": [
+    {"id":{"name":"spr_pingpong_ball","path":"sprites/spr_pingpong_ball/spr_pingpong_ball.yy",},"order":0,},
+    {"id":{"name":"spr_pingpong_racket","path":"sprites/spr_pingpong_racket/spr_pingpong_racket.yy",},"order":1,},
+    {"id":{"name":"spr_pingpong_net","path":"sprites/spr_pingpong_net/spr_pingpong_net.yy",},"order":2,},
+    {"id":{"name":"spr_pingpong_enemy","path":"sprites/spr_pingpong_enemy/spr_pingpong_enemy.yy",},"order":3,},
+    {"id":{"name":"spr_raquetao","path":"sprites/spr_raquetao/spr_raquetao.yy",},"order":4,},
     {"id":{"name":"tutorial_4","path":"rooms/tutorial_4/tutorial_4.yy",},"order":2,},
     {"id":{"name":"sfx_breakmetal","path":"sounds/sfx_breakmetal/sfx_breakmetal.yy",},"order":21,},
     {"id":{"name":"obj_bigdestroyable","path":"objects/obj_bigdestroyable/obj_bigdestroyable.yy",},"order":0,},
